@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.testeVendaThiago.model.Venda;
+import com.testeVendaThiago.service.VendaService;
+
 @RestController
 @RequestMapping("/vendas")
 public class VendaController{
