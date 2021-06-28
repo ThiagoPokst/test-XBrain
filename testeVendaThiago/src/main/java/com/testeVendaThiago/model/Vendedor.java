@@ -7,14 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "Vendedor")
 public class Vendedor {
 	@Id
+	@NotNull
 	@Column(name = "vendedorId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVendedor;
-	@Column(name = "nomeVendedor",nullable = false)
+	@NotNull
+	@Column(name = "nomeVendedor")
 	private String nomeVendedor;
 	
 	public Vendedor() {

@@ -1,5 +1,7 @@
 package com.testeVendaThiago.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,22 +9,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "Venda")
 public class Venda {
 	@Id
+	@NotNull
 	@Column(name = "vendaId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVenda;
-	@Column(name = "dataVenda",nullable = false)
-	private String dataVenda;
-	@Column(name = "valorVenda",nullable = false)
+	@NotNull
+	@Column(name = "dataVenda")
+	private LocalDateTime dataVenda;
+	@NotNull
+	@Column(name = "valorVenda")
 	private double valorVenda;
 	
 	public Venda(){	
 	}
 
-	public Venda(Long idVenda, String dataVenda, double valorVenda) {
+	public Venda(Long idVenda, LocalDateTime dataVenda, double valorVenda) {
 		super();
 		this.idVenda = idVenda;
 		this.dataVenda = dataVenda;
@@ -37,11 +44,11 @@ public class Venda {
 		this.idVenda = idVenda;
 	}
 
-	public String getDataVenda() {
+	public LocalDateTime getDataVenda() {
 		return dataVenda;
 	}
 
-	public void setDataVenda(String dataVenda) {
+	public void setDataVenda(LocalDateTime dataVenda) {
 		this.dataVenda = dataVenda;
 	}
 
