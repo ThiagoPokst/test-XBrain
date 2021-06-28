@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -25,6 +26,9 @@ public class Venda {
 	@NotNull
 	@Column(name = "valorVenda")
 	private double valorVenda;
+	@NotNull
+	@OneToMany(mappedBy = "vendedor")
+	private Long idVendedor;
 	
 	public Venda(){	
 	}

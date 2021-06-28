@@ -21,6 +21,7 @@ public class Vendedor {
 	@Column(name = "nomeVendedor")
 	private String nomeVendedor;
 	
+	
 	public Vendedor() {
 	}
 
