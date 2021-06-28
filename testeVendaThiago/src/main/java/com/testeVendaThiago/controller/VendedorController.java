@@ -34,6 +34,6 @@ public class VendedorController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Vendedor cadastrarVendedor(@RequestBody Vendedor vendedor){
-		return VendedorService.cadastrarVendedor(vendedor);
+		return vendedorService.cadastrarVendedor(vendedor);
 	}
 }
