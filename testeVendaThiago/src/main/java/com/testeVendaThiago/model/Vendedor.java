@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "Vendedor")
 public class Vendedor {
@@ -68,6 +66,5 @@ public class Vendedor {
 			return false;
 		return true;
 	}
-	
 	
 }
