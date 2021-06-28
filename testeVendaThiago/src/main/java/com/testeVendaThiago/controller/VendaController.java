@@ -21,7 +21,7 @@ public class VendaController{
 	}
 		
 	@GetMapping("/{idVenda}")
-		public Venda findByIdVenda(@PathVariable Long idVenda) {
+	public Venda findByIdVenda(@PathVariable Long idVenda) {
 		return vendaService.findByIdVenda(idVenda);
 	}
 		
