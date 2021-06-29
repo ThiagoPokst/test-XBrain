@@ -26,7 +26,7 @@ public class VendedorService {
 		return vendedorRepository.save(vendedor);
 	}
 	
-	public Vendedor somaVendedor(double valorVenda) {
+	//public Vendedor somaVendedor(double valorVenda) {
 		
-	}
+	//}
 }

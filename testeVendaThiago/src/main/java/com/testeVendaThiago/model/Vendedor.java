@@ -14,7 +14,7 @@ import com.sun.istack.NotNull;
 public class Vendedor {
 	@Id
 	@NotNull
-	@Column(name = "vendedorId")
+	@Column(name = "idVendedor")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVendedor;
 	@NotNull

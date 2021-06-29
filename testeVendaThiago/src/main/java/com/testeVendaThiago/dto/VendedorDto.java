@@ -1,3 +1,5 @@
+
+/*
 package com.testeVendaThiago.dto;
 
 import com.testeVendaThiago.model.Vendedor;
@@ -18,3 +20,5 @@ public class VendedorDto {
 		return vendedorDto;
 	}
 }
+
+*/

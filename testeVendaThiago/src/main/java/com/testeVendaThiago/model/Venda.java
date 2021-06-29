@@ -1,13 +1,14 @@
 package com.testeVendaThiago.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -22,47 +23,80 @@ public class Venda {
 	private Long idVenda;
 	@NotNull
 	@Column(name = "dataVenda")
-	private LocalDateTime dataVenda;
+	private Date dataVenda;
 	@NotNull
 	@Column(name = "valorVenda")
 	private double valorVenda;
 	@NotNull
-	@OneToMany(mappedBy = "vendedor")
-	private Long idVendedor;
+	@ManyToOne
+	@JoinColumn(name = "idVendedor")
+	private Vendedor idVendedor;
+	@NotNull
+	private String nomeVendedor;
 	
 	public Venda(){	
 	}
 
-	public Venda(Long idVenda, LocalDateTime dataVenda, double valorVenda) {
+	
+
+	public Venda(Long idVenda, Date dataVenda, double valorVenda, Vendedor idVendedor, String nomeVendedor) {
 		super();
 		this.idVenda = idVenda;
 		this.dataVenda = dataVenda;
 		this.valorVenda = valorVenda;
+		this.idVendedor = idVendedor;
+		this.nomeVendedor = nomeVendedor;
 	}
 
 	public Long getIdVenda() {
 		return idVenda;
 	}
 
+
 	public void setIdVenda(Long idVenda) {
 		this.idVenda = idVenda;
 	}
 
-	public LocalDateTime getDataVenda() {
+
+	public Date getDataVenda() {
 		return dataVenda;
 	}
 
-	public void setDataVenda(LocalDateTime dataVenda) {
+
+	public void setDataVenda(Date dataVenda) {
 		this.dataVenda = dataVenda;
 	}
+
 
 	public double getValorVenda() {
 		return valorVenda;
 	}
 
+
 	public void setValorVenda(double valorVenda) {
 		this.valorVenda = valorVenda;
 	}
+
+
+	public Vendedor getIdVendedor() {
+		return idVendedor;
+	}
+
+
+	public void setIdVendedor(Vendedor idVendedor) {
+		this.idVendedor = idVendedor;
+	}
+
+
+	public String getNomeVendedor() {
+		return nomeVendedor;
+	}
+
+
+	public void setNomeVendedor(String nomeVendedor) {
+		this.nomeVendedor = nomeVendedor;
+	}
+
 
 	@Override
 	public int hashCode() {

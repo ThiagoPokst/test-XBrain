@@ -37,8 +37,8 @@ public class VendedorController {
 		return vendedorService.cadastrarVendedor(vendedor);
 	}
 	
-	@PostMapping("/{dataInicial}/{dataFinal}")
-	public List<Vendedor> retornarLista(@PathVariable String dataInicial, @PathVariable String dataFinal){
-		return vendedorService.retornarLista;
-	}
+	//@PostMapping("/{dataInicial}/{dataFinal}")
+	//public List<Vendedor> retornarLista(@PathVariable String dataInicial, @PathVariable String dataFinal){
+	//	return vendedorService.retornarLista;
+	//}
 }
