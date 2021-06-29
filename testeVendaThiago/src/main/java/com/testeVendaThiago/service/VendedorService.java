@@ -25,8 +25,4 @@ public class VendedorService {
 	public Vendedor cadastrarVendedor(Vendedor vendedor){
 		return vendedorRepository.save(vendedor);
 	}
-	
-	//public Vendedor somaVendedor(double valorVenda) {
-		
-	//}
 }

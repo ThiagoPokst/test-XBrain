@@ -29,7 +29,7 @@ public class Venda {
 	private double valorVenda;
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "idVendedor")
+	@JoinColumn(name = "vendedorVenda")
 	private Vendedor idVendedor;
 	@NotNull
 	private String nomeVendedor;
