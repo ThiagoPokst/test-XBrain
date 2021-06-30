@@ -2,6 +2,7 @@ package com.testeVendaThiago.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,20 +28,17 @@ public class VendaService {
 		return vendaRepository.findByIdVenda(idVenda);
 	}
 	
-	public Vendedor findVendedorById(Long id) {
+	public Optional<Vendedor> findVendedorById(Long id) {
 		return vendedorService.findByIdVendedor(id);
 	}
 	
 	public Venda cadastrarVenda(Venda venda){
-		//venda.setNomeVendedor(findVendedorById(venda.getIdVenda()).getNomeVendedor());
-		Vendedor vendedor = new Vendedor();
-		vendedor = findVendedorById(venda.getIdVenda());
-		venda.setNomeVendedor(vendedor.getNomeVendedor());
+		Optional<Vendedor> vendedor = findVendedorById(venda.getIdVendedor().getIdVendedor());
+		venda.setNomeVendedor(vendedor.get().getNomeVendedor());
 		return vendaRepository.save(venda);
 	}
 
-	 public List<Object[]> byParams(Date dataInicial, Date dataFinal){
-		 return (vendaRepository.byParams(dataInicial,dataFinal));
-
-	    }
+	public List<Object[]> byParams(Date dataInicial, Date dataFinal){
+		return (vendaRepository.byParams(dataInicial,dataFinal));
+	}
 }

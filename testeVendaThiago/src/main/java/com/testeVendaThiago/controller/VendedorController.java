@@ -1,6 +1,7 @@
 package com.testeVendaThiago.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,7 @@ public class VendedorController {
 	}
 	
 	@GetMapping("/{idVendedor}")
-	public Vendedor findByIdCliente(@PathVariable Long idVendedor) {
+	public Optional<Vendedor> findByIdVendedor(@PathVariable Long idVendedor) {
 		return vendedorService.findByIdVendedor(idVendedor);
 	}
 	
@@ -36,9 +37,4 @@ public class VendedorController {
 	public Vendedor cadastrarVendedor(@RequestBody Vendedor vendedor){
 		return vendedorService.cadastrarVendedor(vendedor);
 	}
-	
-	//@PostMapping("/{dataInicial}/{dataFinal}")
-	//public List<Vendedor> retornarLista(@PathVariable String dataInicial, @PathVariable String dataFinal){
-	//	return vendedorService.retornarLista;
-	//}
 }

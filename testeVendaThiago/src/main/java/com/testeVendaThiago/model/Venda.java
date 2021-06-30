@@ -122,7 +122,4 @@ public class Venda {
 			return false;
 		return true;
 	}
-	
-	
-	
 }

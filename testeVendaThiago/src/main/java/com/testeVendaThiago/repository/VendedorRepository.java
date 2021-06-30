@@ -7,5 +7,4 @@ import com.testeVendaThiago.model.Vendedor;
 
 @Repository
 public interface VendedorRepository extends JpaRepository<Vendedor, Long> {
-	Vendedor findByIdVendedor(Long idVendedor);
 }

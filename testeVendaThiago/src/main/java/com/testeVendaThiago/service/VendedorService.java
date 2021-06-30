@@ -1,6 +1,7 @@
 package com.testeVendaThiago.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ public class VendedorService {
 		return vendedorRepository.findAll();
 	}
 	
-	public Vendedor findByIdVendedor(Long idVendedor){
-		return vendedorRepository.findByIdVendedor(idVendedor);
+	public Optional<Vendedor> findByIdVendedor(Long idVendedor){
+		return vendedorRepository.findById(idVendedor);
 	}
 	
 	public Vendedor cadastrarVendedor(Vendedor vendedor){
